@@ -257,7 +257,7 @@ Configuracion para dockerizar el proyecto
 
  ## Diagrama 
 
-![Image](https://github.com/user-attachments/assets/1933631e-9c77-44f9-a48a-42ad20c759b1)
+![Image](https://github.com/user-attachments/assets/7583b7b9-9fc5-4026-8d04-24240c375f30)
 
 
  
