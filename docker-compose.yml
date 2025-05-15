@@ -1,0 +1,31 @@
+volumes:
+  mysql_data:
+  imagenes_data:
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: proyectodb
+      MYSQL_USER: tomeu
+      MYSQL_PASSWORD: tomeu
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  springboot-app:
+    build: .
+    container_name: springboot_container
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/proyectodb
+      SPRING_DATASOURCE_USERNAME: tomeu
+      SPRING_DATASOURCE_PASSWORD: tomeu
+    ports:
+      - "8080:8080"
+    volumes:
+      - imagenes_data:/app/resources/info/imagenes/
