@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Indice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="/info/css/estilo.css">
+</head>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/view/index">La Caverna del Cine</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/view/index">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home/personal">Personal</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home/listaPersonal">Lista Personal</a></li>
+                <li class="nav-item"><a class="nav-link" href="/view/admin">Administración</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Credenciales</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/api/login">Login</a></li>
+                        <li><a class="dropdown-item" href="/api/register">Registro</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4" style="padding-bottom: 50px ; padding-top: 50px">
+    <h1 class="text-center mb-4 fw-bold" style="font-family: 'Cinzel', serif;">Administración</h1>
+</div>
+
+<div class="container my-5">
+    <div class="row text-center">
+
+        <div class="col-md-6 mb-4">
+            <form method="get" action="/usuario/adminUsers">
+                <button type="submit" class="btn btn-xl btn-primary w-100 py-4 fs-4"><i class="fas fa-user-cog"></i> Administración de usuarios</button>
+            </form>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <form method="get" action="/pelicula/adminPeliculas">
+                <button type="submit" class="btn btn-xl btn-danger w-100 py-4 fs-4"><i class="fas fa-film"></i> Administración de Películas</button>
+            </form>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <form method="get" action="/usuario/listaUsuarios">
+                <button type="submit" class="btn btn-xl btn-secondary w-100 py-4 fs-4"><i class="fas fa-users"></i> Lista de Usuarios</button>
+            </form>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <form method="get" action="/pelicula/listaPeliculas">
+                <button type="submit" class="btn btn-xl btn-warning w-100 py-4 fs-4"><i class="fas fa-list"></i> Lista de Películas</button>
+            </form>
+        </div>
+        <div class="col-md-6 mb-4">
+            <form method="get" action="/pelicula/estadisticas">
+                <button type="submit" class="btn btn-xl btn-success w-100 py-4 fs-4"><i class="fas fa-chart-line"></i> Estadísticas</button>
+            </form>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <form method="get" action="/alquiler/gestion">
+                <button type="submit" class="btn btn-xl btn-dark w-100 py-4 fs-4"><i class="fas fa-shopping-cart"></i> Gestión de Alquileres</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!--FOOTER-->
+<footer class="text-center text-lg-start text-white" style="background-color: #929fba">
+    <div class="container p-4 pb-0">
+        <section class="">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">La caverna del Cine</h6>
+                    <p>Bienvenido a La Caverna del Cine – tu refugio cinematográfico donde la magia del séptimo arte cobra vida. Aquí podrás explorar un extenso catálogo de películas para comprar o alquilar, desde clásicos inolvidables hasta los estrenos más recientes. Sumérgete en nuestra caverna y encuentra la historia perfecta para cada ocasión. ¡El cine está más cerca de ti que nunca!</p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Productos</h6>
+                    <p>
+                        <a class="text-white">Peliculas</a>
+                    </p>
+                    <p>
+                        <a class="text-white">Compras</a>
+                    </p>
+                    <p>
+                        <a class="text-white">Alquileres</a>
+                    </p>
+                    <p>
+                        <a class="text-white">Apartado Personal</a>
+                    </p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Contacto</h6>
+                    <p><i class="fas fa-home mr-3"></i> Palma de Mallorca, Islas Baleares</p>
+                    <p><i class="fas fa-envelope mr-3"></i> Lacavernadelcinemallorca@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> + 672 11 12 13</p>
+
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998 " target="_blank" href="https://www.facebook.com/?locale=es_ES"  role="button"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" target="_blank" href="https://x.com/X." role="button"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" target="_blank" href="https://www.google.es/" role="button"><i class="fab fa-google"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" target="_blank" href="https://www.instagram.com/" role="button"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" target="_blank" href="https://www.linkedin.com/login/es" role="button"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" target="_blank"  href="https://github.com/" role="button"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">© 2025 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"></a>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/info/js/js.js"></script>
+</body>
+</html>

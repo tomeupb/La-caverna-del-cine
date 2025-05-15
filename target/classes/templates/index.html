@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Indice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="/info/css/estilo.css">
+</head>
+
+<body>
+
+<!--NAV-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/view/index">La Caverna del Cine</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/view/index">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home/personal">Personal</a></li>
+                <li class="nav-item"><a class="nav-link" href="/view/admin">Administración</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"  data-bs-toggle="dropdown">Credenciales</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/api/login">Login</a></li>
+                        <li><a class="dropdown-item" href="/api/register">Registro</a></li>
+                    </ul>
+                </li>
+
+            <li class="nav-item">
+                <button id="boton" style="background: none">
+                    <img src="/info/imagenes/boton.png" alt="Cambiar Modo" width="40" height="40">
+                </button>
+            </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--Carrusel-->
+
+<div class="container mt-4 text-center">
+    <h1>La Caverna del Cine</h1>
+</div>
+
+
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+
+        <div class="carousel-item active">
+            <img src="/info/imagenes/conclave.jpg" class="d-block w-100" alt="Imagen 1">
+        </div>
+        <div class="carousel-item">
+            <img src="/info/imagenes/interestellar.jpg" class="d-block w-100" alt="Imagen 3">
+        </div>
+        <div class="carousel-item">
+            <img src="/info/imagenes/El%20padrino.jpg" class="d-block w-100" alt="Imagen 6">
+        </div>
+
+        <div class="carousel-item">
+            <img src="/info/imagenes/El%20silencio%20de%20los%20corderos.jpg" class="d-block w-100" alt="Imagen 7">
+        </div>
+
+        <div class="carousel-item">
+            <img src="/info/imagenes/La%20lista%20de%20shidler.jpg" class="d-block w-100" alt="Imagen 8">
+        </div>
+
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card p-4">
+                <p class="text-center">
+                    <strong>La Caverna del Cine</strong> es el lugar perfecto para quienes disfrutan del cine y quieren tener sus películas ordenadas.
+                    Creada por Tomeu Provenzal Bergas, esta plataforma te permite comprar y alquilar películas de todo tipo,
+                    desde grandes clásicos hasta los últimos estrenos.
+                    Además, puedes llevar un registro de las películas que has visto y hacer una lista con las que tienes pendientes,
+                    para que nunca se te pase por alto ese título que querías ver.
+                    Con un diseño fácil de usar y pensado para los amantes del cine.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--INFORMACION-->
+<div class="container mt-4">
+    <h1 class="text-center mb-4  fw-bold">Panel Informativo</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="alert alert-info p-2" role="alert">
+                <h5>Comprar Películas: <strong>10€</strong></h5>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="alert alert-success p-2" role="alert">
+                <h5>Alquilar Películas: <strong>5€</strong></h5>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="alert alert-warning p-2" role="alert">
+                <h5>Tiempo de devolución: <strong>15 días</strong></h5>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="alert alert-danger p-2" role="alert">
+                <h5>Incremento por no devolución: <strong>6€</strong></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<footer class="text-center text-lg-start text-white" style="background-color: #929fba">
+    <div class="container p-4 pb-0">
+        <section class="">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">La caverna del Cine</h6>
+                    <p>Bienvenido a La Caverna del Cine – tu refugio cinematográfico donde la magia del séptimo arte cobra vida. Aquí podrás explorar un extenso catálogo de películas para comprar o alquilar, desde clásicos inolvidables hasta los estrenos más recientes. Sumérgete en nuestra caverna y encuentra la historia perfecta para cada ocasión. ¡El cine está más cerca de ti que nunca!</p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Productos</h6>
+                    <p>
+                        <a class="text-white">Peliculas</a>
+                    </p>
+                    <p>
+                        <a class="text-white">Compras</a>
+                    </p>
+                    <p>
+                        <a class="text-white">Alquileres</a>
+                    </p>
+                    <p>
+                        <a class="text-white">Apartado Personal</a>
+                    </p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Contacto</h6>
+                    <p><i class="fas fa-home mr-3"></i> Palma de Mallorca, Islas Baleares</p>
+                    <p><i class="fas fa-envelope mr-3"></i> Lacavernadelcinemallorca@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> + 672 11 12 13</p>
+
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998 " target="_blank" href="https://www.facebook.com/?locale=es_ES"  role="button"><i class="fab fa-facebook-f"></i></a>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" target="_blank" href="https://x.com/X." role="button"><i class="fab fa-twitter"></i
+                    ></a>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" target="_blank" href="https://www.google.es/" role="button"><i class="fab fa-google"></i></a>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" target="_blank" href="https://www.instagram.com/" role="button"><i class="fab fa-instagram"></i></a>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" target="_blank" href="https://www.linkedin.com/login/es" role="button"><i class="fab fa-linkedin-in"></i
+                    ></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" target="_blank"  href="https://github.com/" role="button"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">© 2025 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"></a>
+    </div>
+</footer>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const boton = document.getElementById("boton");
+        const guardarColor = localStorage.getItem("theme") || "light";
+
+        document.documentElement.setAttribute("data-theme", guardarColor);
+
+
+        boton.addEventListener("click", () => {
+            const colorActual = document.documentElement.getAttribute("data-theme");
+            const nuevoColor = colorActual === "light" ? "dark" : "light";
+
+            document.documentElement.setAttribute("data-theme", nuevoColor);
+            localStorage.setItem("theme", nuevoColor);
+        });
+    });
+
+</script>
+
+
+</body>
+</html>
