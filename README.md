@@ -12,8 +12,11 @@ El **Sistema de Administración ** tendrá como objetivo la gestión de una pág
 
 1. **CRUD de Películas:** El administrador podrá agregar, editar y eliminar películas del sistema.
 2. **CRUD de Usuarios:** El administrador podrá gestionar los usuarios del sistema, incluyendo la creación, edición y eliminación de cuentas.
-3. **Gestión de alquileres:** El administrador podrá gestionar el inventario de películas disponibles para alquilar y comprar
-4. **Gestión de Inventario:** El administrador podrá gestionar el inventario de la página;
+3. **Gestión de alquileres:** El administrador podrá gestionar el inventario de películas disponibles para alquilar
+4. **Gestión de Compras:** El administrador podrá gestionar el inventario de películas disponibles  comprar
+5. **Gestión de Inventario:** El administrador podrá gestionar el inventario de la página;
+6. **Estadísticas:** El administrador podrá gestionar las estadísticas
+8. **Devoluciones:** El administrador podrá gestionar las  devoluciones
 
 ### Contraseñas
  - **BCrypt:** Hasheadaas con BCrypt
@@ -45,6 +48,8 @@ El **Sistema de Administración ** tendrá como objetivo la gestión de una pág
 8.  **Filtrar Peliculas:** Dependiento del estado
 9.  **Calificar peliculas:** 1 a 5
 10.  **Lista Personal:** Podrán filtrar su lista según los valores marcados
+11.  **Transacciones:** Podrán realizar ingresos, pagos de deudas
+12.  **Cerrrar sessión:** Podrán cerrar la sessión
    
 ## Tecnologías
 - **Backend:** Spring Boot
