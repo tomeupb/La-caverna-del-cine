@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Devoluciones de Películas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="/info/css/estilo.css">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/view/index">La Caverna del Cine</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/view/index">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home/personal">Personal</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home/listaPersonal">Lista Personal</a></li>
+                <li class="nav-item"><a class="nav-link" href="/view/admin">Administración</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Credenciales</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/api/login">Login</a></li>
+                        <li><a class="dropdown-item" href="/api/register">Registro</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenedor principal -->
+<div class="container mt-4">
+    <div class="container mt-4" style="padding-bottom: 50px ; padding-top: 50px">
+        <h1 class="text-center mb-4  fw-bold" style="font-family: 'Cinzel', serif;">Gestion de Alquileres</h1>
+    </div>
+
+    <!-- Mensajes de éxito y error -->
+    <div th:if="${error}">
+        <div class="alert alert-danger" role="alert" th:text="${error}"></div>
+    </div>
+    <div th:if="${success}">
+        <div class="alert alert-success" role="alert" th:text="${success}"></div>
+    </div>
+
+    <!-- Tabla responsive -->
+    <div class="table-responsive" style="padding-bottom: 300px">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+            <tr>
+                <th>ID Usuario</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Película Alquilada</th>
+                <th>Fecha de Alquiler</th>
+                <th>Estado</th>
+                <th>Devolver Película</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="alquiler : ${alquileres}">
+                <td th:text="${alquiler.usuario.id_Usuario}"></td>
+                <td th:text="${alquiler.usuario.nombre}"></td>
+                <td th:text="${alquiler.usuario.email}"></td>
+                <td th:text="${alquiler.pelicula.titulo}"></td>
+                <td th:text="${alquiler.fechaAlquiler}"></td>
+                <td th:text="${alquiler.estadoAlquiler}"></td>
+                <td>
+                    <form action="/alquiler/devolver" method="POST">
+                        <input type="hidden" name="idUsuario" th:value="${alquiler.usuario.id_Usuario}" />
+                        <input type="hidden" name="idPelicula" th:value="${alquiler.pelicula.id_Pelicula}" />
+                        <input type="hidden" name="estadoAlquiler" value="devuelta">
+                        <button type="submit" class="btn-devolver">Devolver película</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer class="text-center text-lg-start text-white" style="background-color: #929fba">
+    <div class="container p-4 pb-0">
+        <section class="">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">La caverna del Cine</h6>
+                    <p>Bienvenido a La Caverna del Cine – tu refugio cinematográfico donde la magia del séptimo arte cobra vida. Aquí podrás explorar un extenso catálogo de películas para comprar o alquilar, desde clásicos inolvidables hasta los estrenos más recientes. Sumérgete en nuestra caverna y encuentra la historia perfecta para cada ocasión. ¡El cine está más cerca de ti que nunca!</p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Productos</h6>
+                    <p>
+                        <a class="text-white">Peliculas</a>
+                    </p>
+                    <p>
+                        <a class="text-white">Compras</a>
+                    </p>
+                    <p>
+                        <a class="text-white">Alquileres</a>
+                    </p>
+                    <p>
+                        <a class="text-white">Apartado Personal</a>
+                    </p>
+                </div>
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <hr class="w-100 clearfix d-md-none" />
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Contacto</h6>
+                    <p><i class="fas fa-home mr-3"></i> Palma de Mallorca, Islas Baleares</p>
+                    <p><i class="fas fa-envelope mr-3"></i> Lacavernadelcinemallorca@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> + 672 11 12 13</p>
+
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998 " target="_blank" href="https://www.facebook.com/?locale=es_ES"  role="button"><i class="fab fa-facebook-f"></i></a>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" target="_blank" href="https://x.com/X." role="button"><i class="fab fa-twitter"></i
+                    ></a>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" target="_blank" href="https://www.google.es/" role="button"><i class="fab fa-google"></i></a>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" target="_blank" href="https://www.instagram.com/" role="button"><i class="fab fa-instagram"></i></a>
+
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" target="_blank" href="https://www.linkedin.com/login/es" role="button"><i class="fab fa-linkedin-in"></i
+                    ></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" target="_blank"  href="https://github.com/" role="button"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">© 2025 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"></a>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/info/js/js.js"></script>
+</body>
+</html>

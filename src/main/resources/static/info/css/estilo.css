@@ -1,0 +1,125 @@
+
+
+/*Modo claro-Oscuro*/
+.container.mt-4{
+    padding-bottom: 100px;
+    padding-top: 40px;
+}
+.container.mt-4.text-center {
+    padding-bottom: 30px;
+}
+
+
+h1{
+    font-family: 'Cinzel', serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+.carousel-item img {
+    width: 400px;
+    height: 500px;
+    object-fit: contain;
+}
+
+.carousel.slide{
+    padding-bottom: 100px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: transparent !important;
+    border: none;
+    color: var(--carousel-control-color);
+    font-size: 2rem;
+
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: var(--carousel-control-filter);
+}
+
+:root {
+    --background-color: white;
+    --text-color: black;
+    --h1:black;
+    --carousel-control-color: black;
+    --carousel-control-filter:invert(100%)
+}
+
+[data-theme="dark"] {
+    --background-color: black;
+    --text-color: white;
+    --h1:white;
+    --carousel-control-color: white;
+    --carousel-control-filter:invert(0%)
+}
+
+body {
+    background-color: var(--background-color);;
+    color: var(--text-color);
+    transition: 0.3s ease-in-out;
+}
+
+/*Lista personal*/
+.card-img-top {
+    height: 500px;
+    border-bottom: 3px solid #007bff;
+}
+
+h1{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-family: 'Cinzel', serif;
+}
+.card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #007bff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-footer .btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*Lista de Peliculas*/
+/*Gestion de Alquileres*/
+/*  cabecera */
+.table thead {
+    background-color: #343a40;
+    color: white;
+}
+.table td, .table th {
+    vertical-align: middle;
+}
+/*  ancho */
+.container {
+    max-width: 1200px;
+}
+.card {
+    margin-bottom: 20px;
+}
+/* imagen de la película */
+img.pelicula-img {
+    width: 100px;
+}
+/*Boton devolver*/
+.btn-devolver {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}

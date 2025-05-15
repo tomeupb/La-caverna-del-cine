@@ -1,0 +1,18 @@
+
+
+Registro ->  http://localhost:8080/api/register
+Login    ->  http://localhost:8080/api/login
+Personal ->  http://localhost:8080/home/personal
+Lista de Peliculas Personal ->http://localhost:8080/home/listaPersonal
+Index    ->  http://localhost:8080/view/index
+
+Administracion -> http://localhost:8080/view/admin
+Administracion crud de usuarios -> http://localhost:8080/usuario/listaUsuarios
+Administracion crud de peliculas ->http://localhost:8080/pelicula/adminPeliculas
+
+Lista de usuarios  Admin -> http://localhost:8080/usuario/listaUsuarios
+Lista de peliculas Admin -> http://localhost:8080/pelicula/listaPeliculas
+
+
+***Siguiente***
+
