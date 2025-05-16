@@ -2,7 +2,9 @@ package com.proyectoTfg.demo.repository;
 
 import com.proyectoTfg.demo.model.Alquileres;
 import com.proyectoTfg.demo.model.EstadosPeliculas;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -30,6 +32,8 @@ public interface AlquileresRepository extends JpaRepository<Alquileres, Integer>
 
     @Query("SELECT a FROM Alquileres a WHERE a.estadoAlquiler = 'alquilada'")
     List<Alquileres> findAlquileresActivos();
+
+
 }
 
 

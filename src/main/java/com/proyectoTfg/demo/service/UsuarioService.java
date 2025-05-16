@@ -2,7 +2,8 @@ package com.proyectoTfg.demo.service;
 
 
 import com.proyectoTfg.demo.model.Usuario;
-import com.proyectoTfg.demo.repository.UsuarioRepository;
+import com.proyectoTfg.demo.repository.*;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,20 @@ public class UsuarioService {
     @Autowired
     UsuarioRepository usuarioRepository;
 
+    @Autowired
+    EstadosPeliculasRepository estadosPeliculasRepository;
+
+
+    @Autowired
+    UsuariosPeliculasRepository usuariosPeliculasRepository;
+
+    @Autowired
+    TransaccionRepository transaccionRepository;
+    @Autowired
+    CompraRepository compraRepository;
+
+    @Autowired
+    AlquileresRepository alquileresRepository;
     //crear
     public Usuario addUsuario(Usuario usuario) {
         return usuarioRepository.save(usuario);
@@ -32,8 +47,14 @@ public class UsuarioService {
     }
 
     //borrar
+    @Transactional
     public void adminDelete(Integer id_Usuario){
-     usuarioRepository.deleteById(id_Usuario);
+        compraRepository.deleteByUsuarioId(id_Usuario);
+        usuariosPeliculasRepository.deleteByUsuarioId(id_Usuario);
+        estadosPeliculasRepository.deleteByUsuarioId(id_Usuario);
+        transaccionRepository.deleteByUsuarioId(id_Usuario);
+        usuarioRepository.deleteById(id_Usuario);
+
     }
 
     //buscar por id

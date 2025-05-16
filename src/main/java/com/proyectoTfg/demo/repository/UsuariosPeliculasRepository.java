@@ -2,7 +2,9 @@ package com.proyectoTfg.demo.repository;
 
 import com.proyectoTfg.demo.model.Alquileres;
 import com.proyectoTfg.demo.model.UsuariosPeliculas;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -73,7 +75,10 @@ public interface UsuariosPeliculasRepository  extends JpaRepository<UsuariosPeli
     Long alquilerPorSexo(@Param("sexo") String sexo);
 
 
-
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM alquileres WHERE id_usuario = :idUsuario", nativeQuery = true)
+    void deleteByUsuarioId(@Param("idUsuario") Integer idUsuario);
 
 
 

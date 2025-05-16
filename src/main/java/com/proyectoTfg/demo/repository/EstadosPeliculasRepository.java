@@ -1,8 +1,10 @@
 package com.proyectoTfg.demo.repository;
 
 import com.proyectoTfg.demo.model.EstadosPeliculas;
+import jakarta.transaction.Transactional;
 import org.aspectj.apache.bcel.classfile.Module;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -32,6 +34,10 @@ public interface EstadosPeliculasRepository extends JpaRepository<EstadosPelicul
     List<EstadosPeliculas> filtroPosesion(@Param("id_usuario")Integer id_usuario);
 
 
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM alquileres WHERE id_usuario = :idUsuario", nativeQuery = true)
+    void deleteByUsuarioId(@Param("idUsuario") Integer idUsuario);
 
 
 }

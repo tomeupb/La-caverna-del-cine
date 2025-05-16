@@ -18,7 +18,7 @@ public class administrador implements CommandLineRunner {
         if (usuarioRepository.findByEmail("admin@gmail.com").isEmpty()) {
             Usuario admin = new Usuario();
             admin.setNombre("Admin");
-            admin.setCredito(10000.0);
+            admin.setCredito(1000.0);
             admin.setDeuda(0);
             admin.setEmail("admin@gmail.com");
             admin.setPassword(HashPassword.hashPassword("admin"));

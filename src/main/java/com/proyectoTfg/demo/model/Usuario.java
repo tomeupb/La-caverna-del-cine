@@ -32,9 +32,18 @@ public class Usuario {
     private String sexo;
 
 
-    @OneToMany(mappedBy = "usuario")
+   // @OneToMany(mappedBy = "usuario")
+    //private List<UsuariosPeliculas> peliculas;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<UsuariosPeliculas> peliculas;
 
+    //nuevo
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<EstadosPeliculas> estadosPeliculas;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Compra> compras;
 
 
 }

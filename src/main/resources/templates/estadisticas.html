@@ -108,7 +108,7 @@
     <!-- Películas Alquiladas por Sexo -->
     <form action="#" th:action="@{/pelicula/alquilerPorSexo}" method="post" class="card p-3 mb-4">
         <h2>Películas Alquiladas por Sexo</h2>
-        <label for="sexo3" class="form-label">Sexo:</label>
+        <label for="sexo" class="form-label">Sexo:</label>
         <select id="sexo3" name="sexo" class="form-select" required>
             <option value="hombre">Hombre</option>
             <option value="mujer">Mujer</option>
@@ -118,7 +118,7 @@
 
     <div th:if="${total3 != null}" class="alert alert-info">
         <h2>Resultado de Alquileres:</h2>
-        <p th:text="'Se han alquilado ' + ${total}+ ' películas por el sexo ' + ${sexo}"></p>
+        <p th:text="'Se han alquilado ' + ${total3}+ ' películas por el sexo ' + ${sexo}"></p>
     </div>
 
     <!-- Calificaciones por genero -->

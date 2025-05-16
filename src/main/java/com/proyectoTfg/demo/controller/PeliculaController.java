@@ -5,6 +5,7 @@ import com.proyectoTfg.demo.model.EstadosPeliculas;
 import com.proyectoTfg.demo.model.Pelicula;
 import com.proyectoTfg.demo.model.Usuario;
 import com.proyectoTfg.demo.model.UsuariosPeliculas;
+import com.proyectoTfg.demo.repository.EstadosPeliculasRepository;
 import com.proyectoTfg.demo.repository.PeliculaRepository;
 import com.proyectoTfg.demo.repository.TransaccionRepository;
 import com.proyectoTfg.demo.service.EstadosPeliculasService;
@@ -45,6 +46,9 @@ public class PeliculaController {
     TransaccionRepository transaccionRepository;
     @Autowired
     private UsuarioService usuarioService;
+
+    @Autowired
+    EstadosPeliculasRepository estadosPeliculasRepository;
 
 
     //Verificar si eres admin
@@ -333,6 +337,7 @@ public class PeliculaController {
         Integer idUsuario = usuario.getId_Usuario();
 
         redirectAttributes.addFlashAttribute("correcto","Pelicula Marcada como "+estado);
+
         estadosPeliculasService.estado(idUsuario,idPelicula,estado);
         return "redirect:/home/listaPersonal";
 

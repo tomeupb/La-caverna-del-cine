@@ -8,7 +8,7 @@ import java.util.List;
 public interface PeliculaRepository extends JpaRepository<Pelicula, Integer> {
 
 
-    List<Pelicula> findByGeneroAndAnoAndFormato(String genero, Integer ano, String formato);
+
 
 
 

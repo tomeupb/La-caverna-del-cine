@@ -27,7 +27,7 @@ public class RegisterController {
     }
 
     @PostMapping("register")
-    public String registerP(Usuario usuario , Model model) {
+    public String       registerP(Usuario usuario , Model model) {
 
         if (usuarioService.uniqueEmail(usuario.getEmail())) {
 
