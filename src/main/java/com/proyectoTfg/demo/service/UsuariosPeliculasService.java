@@ -123,6 +123,14 @@ public class UsuariosPeliculasService {
         return usuariosPeliculasRepository.alquilerPorSexo(sexo);
     }
 
+    public long totalComprasHombres(){
+        return  usuariosPeliculasRepository.totalComprasHombres();
+    }
+
+    public long totalComprasMujeres(){
+        return  usuariosPeliculasRepository.totalComprasMujeres();
+    }
+
     public Long calificacionesGenero(String genero) {
         return usuariosPeliculasRepository.calificacionesGenero(genero);
     }

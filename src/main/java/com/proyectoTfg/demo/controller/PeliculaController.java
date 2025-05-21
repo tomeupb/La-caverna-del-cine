@@ -51,6 +51,21 @@ public class PeliculaController {
     EstadosPeliculasRepository estadosPeliculasRepository;
 
 
+    @CrossOrigin(origins = "*")
+    @GetMapping("/grafico")
+    @ResponseBody
+    public Map<String, Long> obtenerDatos() {
+        Map<String, Long> datos = new HashMap<>();
+        datos.put("Hombres", usuariosPeliculasService.totalComprasHombres());
+        datos.put("Mujeres", usuariosPeliculasService.totalComprasMujeres());
+        return datos;
+    }
+    @GetMapping("/datos")
+    public String datos(){
+        return "datos";
+    }
+
+
     //Verificar si eres admin
     private boolean esAdmin(HttpSession session) {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
@@ -459,6 +474,31 @@ public class PeliculaController {
         model.addAttribute("total3", total3);
         return "estadisticas";
     }
+
+    //NUEVOS hombre
+    @PostMapping("/comprasHombre")
+    public String totalComprasHombres(Model model) {
+        Long total6 = usuariosPeliculasService.totalComprasHombres();
+
+        model.addAttribute("total6", total6);
+        return "estadisticas";
+    }
+    //NUEVOS mujer
+    @PostMapping("/comprasMujer")
+    public String totalComprasMujeres(Model model) {
+        Long total7 = usuariosPeliculasService.totalComprasMujeres();
+        model.addAttribute("total7", total7);
+        return "estadisticas";
+    }
+
+
+
+
+
+
+
+
+
 
     @PostMapping("/calificacionesGenero")
     public String calificacionesGenero(@RequestParam String genero,

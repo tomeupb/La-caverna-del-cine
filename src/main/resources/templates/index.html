@@ -27,8 +27,13 @@
                 <li class="nav-item"><a class="nav-link" href="/view/index">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/home/personal">Personal</a></li>
                 <li class="nav-item"><a class="nav-link" href="/view/admin">Administración</a></li>
+            <!--
+            <th:block th:if="${usuario != null and usuario.rol == 'ADMIN'}">
+                <li class="nav-item"><a class="nav-link" href="/view/admin">Administración</a></li>
+            </th:block>
+            -->
 
-                <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle"  data-bs-toggle="dropdown">Credenciales</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/api/login">Login</a></li>

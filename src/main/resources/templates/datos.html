@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Compras</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<h2>Compras Hombres Vs Mujeres</h2>
+<div style="width: 300px; height: 300px;">
+  <canvas id="Grafico"></canvas>
+</div>
+
+
+
+<script>
+  fetch('/pelicula/grafico')
+          .then(response => response.json())
+          .then(datos => {
+            var ctx = document.getElementById('Grafico').getContext('2d');
+            new Chart(ctx, {
+              type: 'pie',
+              data: {
+                labels: Object.keys(datos),
+                datasets: [{
+                  label: 'Total Compras',
+                  data: Object.values(datos),
+                  backgroundColor: ['pink', 'blue'],
+                  borderColor: ['black', 'black'],
+                  borderWidth: 2
+                }]
+              }
+            });
+          })
+          .catch(error => console.error("Error al obtener los datos:", error));
+
+
+</script>
+</body>
+</html>

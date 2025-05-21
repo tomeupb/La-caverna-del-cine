@@ -82,5 +82,13 @@ public interface UsuariosPeliculasRepository  extends JpaRepository<UsuariosPeli
 
 
 
+    //total compras hombres individual
+
+    @Query(value = "SELECT COUNT(*) FROM compras c JOIN usuarios u ON c.id_usuario = u.id_usuario WHERE c.estado_compra = 'comprado' AND u.sexo = 'hombre'", nativeQuery = true)
+    Long totalComprasHombres();
+    //total compras mujeres  individual
+    @Query(value = "SELECT COUNT(*) FROM compras c JOIN usuarios u ON c.id_usuario = u.id_usuario WHERE c.estado_compra = 'comprado' AND u.sexo = 'mujer'", nativeQuery = true)
+    Long totalComprasMujeres();
+
 
 }

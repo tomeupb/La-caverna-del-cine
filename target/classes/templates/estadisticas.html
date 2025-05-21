@@ -47,8 +47,9 @@
     </div>
 
 
-
-
+    <div class="card p-3 mb-4">
+        <a href="/pelicula/datos" class="btn btn-success mt-3">Ver Diagramas</a>
+    </div>
 
 
     <!-- Formulario: Películas vistas por sexo y género -->
@@ -97,6 +98,9 @@
         <h2>Resultado de Compras:</h2>
         <p th:text="'Se han comprado ' + ${total2} + ' películas por el sexo ' + ${sexo}"></p>
     </div>
+
+
+
 
     <!-- Películas Alquiladas por Sexo -->
     <form action="#" th:action="@{/pelicula/alquilerPorSexo}" method="post" class="card p-3 mb-4">
@@ -149,6 +153,8 @@
         <h2>Resultado de Gastos:</h2>
         <p th:text="'Se ha gastado un total de ' + ${total5}"></p>
     </div>
+</div>
+
 </div>
 
 <!-- footer-->
