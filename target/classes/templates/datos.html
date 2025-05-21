@@ -19,8 +19,8 @@
   fetch('/pelicula/grafico')
           .then(response => response.json())
           .then(datos => {
-            var ctx = document.getElementById('Grafico').getContext('2d');
-            new Chart(ctx, {
+            var grafico1 = document.getElementById('Grafico').getContext('2d');
+            new Chart(grafico1, {
               type: 'pie',
               data: {
                 labels: Object.keys(datos),
