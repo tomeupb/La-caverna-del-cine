@@ -137,17 +137,106 @@ public class UsuariosPeliculasService {
 
 
 
-
-
-
-
-
-
-
-
-
+    public Long totalHombres(){
+        return usuariosPeliculasRepository.totalHombres();
 
     }
+
+    public Long totalMujeres(){
+        return usuariosPeliculasRepository.totalMujeres();
+
+    }
+
+    public Long totalAlquiladaHombres(){
+        return usuariosPeliculasRepository.totalAlquilerHombre();
+    }
+
+    public Long totalAlquiladaMujeres(){
+        return usuariosPeliculasRepository.totalAlquilerMujer();
+    }
+
+    public Long totalAccion(){
+        return usuariosPeliculasRepository.totalAccion();
+    }
+
+    public Long totalTerror(){
+        return usuariosPeliculasRepository.totalTerror();
+    }
+
+    public Long totalFantasia(){
+        return usuariosPeliculasRepository.totalFantasia();
+    }
+
+    public Long totalRomantica(){
+        return usuariosPeliculasRepository.totalRomantica();
+    }
+
+    public Long totalComedia(){
+        return usuariosPeliculasRepository.totalComedia();
+    }
+
+    public Long totalHistorico(){
+        return usuariosPeliculasRepository.totalHistorico();
+    }
+
+    public Long totalSuspense(){
+        return usuariosPeliculasRepository.totalSuspense();
+    }
+
+    public Long totalDrama(){
+        return usuariosPeliculasRepository.totalDrama();
+    }
+
+    public Long  totalAnimacion(){
+        return usuariosPeliculasRepository.totalAnimacion();
+    }
+
+    public Long totalAccionAlquiler() {
+        return usuariosPeliculasRepository.totalAccionAlquiler();
+    }
+
+    public Long totalTerrorAlquiler() {
+        return usuariosPeliculasRepository.totalTerrorAlquiler();
+    }
+
+    public Long totalFantasiaAlquiler() {
+        return usuariosPeliculasRepository.totalFantasiaAlquiler();
+    }
+
+    public Long totalRomanticaAlquiler() {
+        return usuariosPeliculasRepository.totalRomanticaAlquiler();
+    }
+
+    public Long totalComediaAlquiler() {
+        return usuariosPeliculasRepository.totalComediaAlquiler();
+    }
+
+    public Long totalHistoricoAlquiler() {
+        return usuariosPeliculasRepository.totalHistoricoAlquiler();
+    }
+
+    public Long totalSuspenseAlquiler() {
+        return usuariosPeliculasRepository.totalSuspenseAlquiler();
+    }
+
+    public Long totalDramaAlquiler() {
+        return usuariosPeliculasRepository.totalDramaAlquiler();
+    }
+
+    public Long totalAnimacionAlquiler() {
+        return usuariosPeliculasRepository.totalAnimacionAlquiler();
+    }
+
+
+
+
+
+
+
+
+
+
+}
 
 
 

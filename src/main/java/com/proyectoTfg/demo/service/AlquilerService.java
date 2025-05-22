@@ -49,6 +49,7 @@ public class AlquilerService {
             alquileres = new Alquileres();
             alquileres.setUsuario(usuario);
             alquileres.setPelicula(pelicula);
+            alquileres.setGenero(pelicula.getGenero());
             alquileres.setFechaAlquiler(LocalDate.now());
         }
 

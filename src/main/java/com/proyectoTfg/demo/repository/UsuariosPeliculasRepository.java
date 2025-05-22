@@ -91,4 +91,79 @@ public interface UsuariosPeliculasRepository  extends JpaRepository<UsuariosPeli
     Long totalComprasMujeres();
 
 
+
+    @Query(value = "SELECT COUNT(*) FROM alquileres c JOIN usuarios u ON c.id_usuario = u.id_usuario WHERE c.estado_alquiler = 'alquilada' AND u.sexo = 'hombre'", nativeQuery = true)
+    Long totalAlquilerHombre();
+
+    @Query(value = "SELECT COUNT(*) FROM alquileres c JOIN usuarios u ON c.id_usuario = u.id_usuario WHERE c.estado_alquiler = 'alquilada' AND u.sexo = 'mujer'", nativeQuery = true)
+    Long totalAlquilerMujer();
+
+
+
+
+    @Query(value = "SELECT COUNT(*) FROM usuarios WHERE sexo = 'hombre'", nativeQuery = true)
+    Long totalHombres();
+
+  ;
+    //total compras mujeres  individual
+    @Query(value = "SELECT COUNT(*) FROM usuarios WHERE sexo = 'mujer'", nativeQuery = true)
+    Long totalMujeres();
+
+    //Para diagramas de todas las peliculas compradas por genero de pelicula
+
+    @Query(value="SELECT COUNT(*) FROM compras WHERE genero = 'Accion'" , nativeQuery = true)
+    Long totalAccion();
+
+    @Query(value="SELECT COUNT(*) FROM compras WHERE genero = 'Terror'" , nativeQuery = true)
+    Long totalTerror();
+
+    @Query(value="SELECT COUNT(*) FROM compras WHERE genero = 'Fantasia'" , nativeQuery = true)
+    Long totalFantasia();
+
+    @Query(value="SELECT COUNT(*) FROM compras WHERE genero = 'Romantica'" , nativeQuery = true)
+    Long totalRomantica();
+
+    @Query(value="SELECT COUNT(*) FROM compras WHERE genero = 'Comedia'" , nativeQuery = true)
+    Long totalComedia();
+
+    @Query(value="SELECT COUNT(*) FROM compras WHERE genero = 'Historico'" , nativeQuery = true)
+    Long totalHistorico();
+
+    @Query(value="SELECT COUNT(*) FROM compras WHERE genero = 'Suspense'" , nativeQuery = true)
+    Long totalSuspense();
+
+    @Query(value="SELECT COUNT(*) FROM compras WHERE genero = 'Drama'" , nativeQuery = true)
+    Long totalDrama();
+
+    @Query(value="SELECT COUNT(*) FROM compras WHERE genero = 'Animacion'" , nativeQuery = true)
+    Long totalAnimacion();
+    //Para diagramas de todas las peliculas alquiladas por genero de pelicula
+    @Query(value="SELECT COUNT(*) FROM alquileres WHERE genero = 'Accion'" , nativeQuery = true)
+    Long totalAccionAlquiler();
+
+    @Query(value="SELECT COUNT(*) FROM alquileres WHERE genero = 'Terror'" , nativeQuery = true)
+    Long totalTerrorAlquiler();
+
+    @Query(value="SELECT COUNT(*) FROM alquileres WHERE genero = 'Fantasia'" , nativeQuery = true)
+    Long totalFantasiaAlquiler();
+
+    @Query(value="SELECT COUNT(*) FROM alquileres WHERE genero = 'Romantica'" , nativeQuery = true)
+    Long totalRomanticaAlquiler();
+
+    @Query(value="SELECT COUNT(*) FROM alquileres WHERE genero = 'Comedia'" , nativeQuery = true)
+    Long totalComediaAlquiler();
+
+    @Query(value="SELECT COUNT(*) FROM alquileres WHERE genero = 'Historico'" , nativeQuery = true)
+    Long totalHistoricoAlquiler();
+
+    @Query(value="SELECT COUNT(*) FROM alquileres WHERE genero = 'Suspense'" , nativeQuery = true)
+    Long totalSuspenseAlquiler();
+
+    @Query(value="SELECT COUNT(*) FROM alquileres WHERE genero = 'Drama'" , nativeQuery = true)
+    Long totalDramaAlquiler();
+
+    @Query(value="SELECT COUNT(*) FROM alquileres WHERE genero = 'Animacion'" , nativeQuery = true)
+    Long totalAnimacionAlquiler();
+
+
 }

@@ -60,6 +60,68 @@ public class PeliculaController {
         datos.put("Mujeres", usuariosPeliculasService.totalComprasMujeres());
         return datos;
     }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/grafico1")
+    @ResponseBody
+    public Map<String, Long> obtenerDatos1() {
+        Map<String, Long> datos1 = new HashMap<>();
+        datos1.put("Hombres", usuariosPeliculasService.totalHombres());
+        datos1.put("Mujeres", usuariosPeliculasService.totalMujeres());
+        return datos1;
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/grafico2")
+    @ResponseBody
+    public Map<String, Long> obtenerDatos2() {
+        Map<String, Long> datos2 = new HashMap<>();
+        datos2.put("Hombres", usuariosPeliculasService.totalAlquiladaHombres());
+        datos2.put("Mujer", usuariosPeliculasService.totalAlquiladaMujeres());
+
+        return datos2;
+    }
+
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/grafico3")
+    @ResponseBody
+    public Map<String, Long> obtenerDatos3() {
+        Map<String, Long> datos3 = new HashMap<>();
+        datos3.put("Accion", usuariosPeliculasService.totalAccion());
+        datos3.put("Terror", usuariosPeliculasService.totalTerror());
+        datos3.put("Fantasia", usuariosPeliculasService.totalFantasia());
+        datos3.put("Romantica", usuariosPeliculasService.totalRomantica());
+        datos3.put("Comedia", usuariosPeliculasService.totalComedia());
+        datos3.put("Historico", usuariosPeliculasService.totalHistorico());
+        datos3.put("Suspense", usuariosPeliculasService.totalSuspense());
+        datos3.put("Drama", usuariosPeliculasService.totalDrama());
+        datos3.put("Animacion", usuariosPeliculasService.totalAnimacion());
+
+        return datos3;
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/grafico4")
+    @ResponseBody
+    public Map<String, Long> obtenerDatos4() {
+        Map<String, Long> datos4 = new HashMap<>();
+        datos4.put("Accion", usuariosPeliculasService.totalAccionAlquiler());
+        datos4.put("Terror", usuariosPeliculasService.totalTerrorAlquiler());
+        datos4.put("Fantasia", usuariosPeliculasService.totalFantasiaAlquiler());
+        datos4.put("Romantica", usuariosPeliculasService.totalRomanticaAlquiler());
+        datos4.put("Comedia", usuariosPeliculasService.totalComediaAlquiler());
+        datos4.put("Historico", usuariosPeliculasService.totalHistoricoAlquiler());
+        datos4.put("Suspense", usuariosPeliculasService.totalSuspenseAlquiler());
+        datos4.put("Drama", usuariosPeliculasService.totalDramaAlquiler());
+        datos4.put("Animacion", usuariosPeliculasService.totalAnimacionAlquiler());
+
+        return datos4;
+    }
+
+
+
+
     @GetMapping("/datos")
     public String datos(){
         return "datos";

@@ -42,6 +42,7 @@ public class CompraService {
             compra = new Compra();
             compra.setUsuario(usuario);
             compra.setPelicula(pelicula);
+            compra.setGenero(pelicula.getGenero());
             compra.setFechaCompra(LocalDate.now());
 
         }

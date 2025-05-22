@@ -35,7 +35,13 @@ public class Compra {
 
     private  Double precioCompra=10.0;
 
+    //nuevo diagrama
+    private String genero;
+
     @Column(name = "estado_Compra")
     private String estadoCompra = "false";
+
+
+
 
 }

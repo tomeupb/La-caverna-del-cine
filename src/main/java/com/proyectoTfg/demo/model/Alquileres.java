@@ -37,6 +37,8 @@ public class Alquileres {
     @Column(name = "fecha_devolucion")
     private LocalDate fechaDevolucion;
 
+    private String genero;
+
 
     private  Double precioAlquiler=5.0;
 
