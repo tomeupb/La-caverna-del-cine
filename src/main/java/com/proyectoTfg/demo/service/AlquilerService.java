@@ -92,7 +92,7 @@ public class AlquilerService {
                             "Tu alquiler de la película '" + pelicula.getTitulo() + "' ha sido procesado con éxito.\n" +
                             "Precio del alquiler: " + alquileres.getPrecioAlquiler() +"€"+ "\n\n" + // Y el precio
                             "Puedes venir a recogerla en cualquier momento.\n\n" +
-                            "Tienes 15 dias desde el dia de la compra para devolver la pelicula sin tener recargos.\n\n" +
+                            "Tienes 15 dias desde el dia del alquiler para devolver la pelicula sin tener recargos.\n\n" +
                             "Gracias por usar nuestro servicio."
             );
 
