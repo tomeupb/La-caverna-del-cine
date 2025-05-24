@@ -19,7 +19,7 @@ public class EmailService {
         mensaje.setSubject(asunto);
         mensaje.setText(cuerpo);
         mensaje.setFrom("Lacavernadelcinemallorca@gmail.com");
-        //mailSender.send(mensaje);
+        mailSender.send(mensaje);
     }
 
 
@@ -30,7 +30,7 @@ public class EmailService {
         mensaje.setSubject(asunto);
         mensaje.setText(cuerpo);
         mensaje.setFrom("Lacavernadelcinemallorca@gmail.com");
-       //mailSender.send(mensaje);
+       mailSender.send(mensaje);
     }
 
 
@@ -41,7 +41,7 @@ public class EmailService {
         mensaje.setSubject(asunto);
         mensaje.setText(cuerpo);
         mensaje.setFrom("Lacavernadelcinemallorca@gmail.com");
-       //mailSender.send(mensaje);
+       mailSender.send(mensaje);
     }
 
     //Correo de compra de Pelicula
@@ -51,7 +51,7 @@ public class EmailService {
         mensaje.setSubject(asunto);
         mensaje.setText(cuerpo);
         mensaje.setFrom("Lacavernadelcinemallorca@gmail.com");
-        //mailSender.send(mensaje);
+        mailSender.send(mensaje);
     }
 
 
@@ -62,7 +62,7 @@ public class EmailService {
         mensaje.setSubject(asunto);
         mensaje.setText(cuerpo);
         mensaje.setFrom("Lacavernadelcinemallorca@gmail.com");
-        //mailSender.send(mensaje);
+        mailSender.send(mensaje);
     }
 
 
