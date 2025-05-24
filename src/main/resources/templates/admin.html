@@ -69,12 +69,16 @@
         </div>
     </div>
 </nav>
-<p th:if="${usuario != null}">
-    Tu rol es: <span th:text="${usuario.rol}"></span>
-</p>
-<p th:if="${usuario == null}">
-    No hay usuario autenticado.
-</p>
+<div class="d-flex justify-content-start">
+    <th:block th:if="${usuario != null and usuario.rol == 'ADMIN'}">
+        <img th:src="@{/info/imagenes/admin.png}" class="img-fluid" style="max-width: 50px; height: auto;" alt="Imagen Admin"/>
+    </th:block>
+
+    <th:block th:if="${usuario != null and usuario.rol == 'USER'}">
+        <img th:src="@{/info/imagenes/usuario.png}" class="img-fluid" style="max-width: 50px; height: auto;" alt="Imagen Usuario"/>
+    </th:block>
+</div>
+
 <div class="container mt-4" style="padding-bottom: 50px ; padding-top: 50px">
     <h1 class="text-center mb-4 fw-bold" style="font-family: 'Cinzel', serif;">Administración</h1>
 </div>

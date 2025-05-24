@@ -172,8 +172,13 @@ public class PeliculaController {
         List<Pelicula> peliculas =  peliculaService.getAllPeliculas();
 
         Usuario usuario= (Usuario)session.getAttribute("usuario");
+        if(usuario ==null){ //mostrar por pantalla la session del usuario al logearse
+            return "redirect:/api/login";
+        }
+
         Integer IdUsuario = usuario.getId_Usuario();
         List<UsuariosPeliculas>usuariosPeliculas = usuariosPeliculasService.obtenerTodas(IdUsuario);
+
 
         Map<Integer, UsuariosPeliculas> mapaUsuariosPeliculas = new HashMap<>();
         for (UsuariosPeliculas up : usuariosPeliculas) {
@@ -184,9 +189,10 @@ public class PeliculaController {
         model.addAttribute("usuario", usuario);
         model.addAttribute("usuariosPeliculas", usuariosPeliculas);
         model.addAttribute("peliculas", peliculas);
+
+
         return "listaPersonal";
     }
-
 
 
     //Borrar peliculas por id
