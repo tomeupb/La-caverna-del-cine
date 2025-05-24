@@ -31,7 +31,7 @@ public class AIService {
                         Map.of("role", "system", "content", "Experto en el mundo del cine y en recomnedar peliculas"), // comportamiento
                         Map.of("role", "user", "content", mensaje) //contexto predefinido
                 ),
-                "max_tokens", 148 //tamaño respuesta
+                "max_tokens", 101 //tamaño respuesta
         );
 
         HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody, headers); //peticion

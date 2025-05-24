@@ -1,7 +1,9 @@
 package com.proyectoTfg.demo.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.proyectoTfg.demo.model.Usuario;
 import com.proyectoTfg.demo.service.AIService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -16,7 +18,10 @@ public class AIController {
     private AIService aiService;
 
     @GetMapping("/preguntar")
-    public String preguntar(@RequestParam(required = false) String mensaje, Model model) throws JsonProcessingException {
+    public String preguntar(HttpSession session ,@RequestParam(required = false) String mensaje, Model model) throws JsonProcessingException {
+
+        Usuario usuario= (Usuario)session.getAttribute("usuario");
+        model.addAttribute("usuario", usuario);
         if (mensaje == null ){
             model.addAttribute("respuesta", "Por favor ingresa un mensaje válido.");
         } else {
@@ -28,6 +33,7 @@ public class AIController {
 
     @GetMapping("/chat")
         public String chat(){
+
             return "chat";
         }
 }

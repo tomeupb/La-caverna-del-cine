@@ -3,6 +3,7 @@ package com.proyectoTfg.demo.controller;
 import com.proyectoTfg.demo.model.Alquileres;
 import com.proyectoTfg.demo.model.Pelicula;
 import com.proyectoTfg.demo.model.Usuario;
+import com.proyectoTfg.demo.repository.PeliculaRepository;
 import com.proyectoTfg.demo.service.AlquilerService;
 import com.proyectoTfg.demo.service.PeliculaService;
 import jakarta.servlet.http.HttpSession;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
@@ -25,6 +27,8 @@ public class AlquilerController {
 
     @Autowired
     AlquilerService alquilerService;
+    @Autowired
+    private PeliculaRepository peliculaRepository;
 
     @PostMapping("/temporal")
     public String temporal(@RequestParam  Integer idPelicula,
@@ -60,8 +64,13 @@ public class AlquilerController {
                            HttpSession session,
                            RedirectAttributes redirectAttributes){
 
+        Pelicula pelicula = peliculaRepository.findById(idPelicula).orElseThrow();
+
         if ("devuelta".equals(estadoAlquiler)) {
             alquilerService.devuelta(idUsuario, idPelicula, redirectAttributes);
+
+            pelicula.setDisponibleAlquiler(pelicula.getDisponibleAlquiler()+1);
+            peliculaRepository.save(pelicula);
         } else if ("alquilada".equals(estadoAlquiler)) {
             alquilerService.alquilada(idUsuario, idPelicula, estadoAlquiler, redirectAttributes);
         }
@@ -101,7 +110,8 @@ public class AlquilerController {
 
     @GetMapping("/gestion")
     public String verUsuariosConPeliculasAlquiladas(Model model , HttpSession session) {
-
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        model.addAttribute("usuario", usuario);
         if(!esAdmin(session)){
             return "redirect:/api/login";
         }

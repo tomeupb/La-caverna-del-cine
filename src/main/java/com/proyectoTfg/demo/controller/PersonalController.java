@@ -44,9 +44,9 @@ public class PersonalController {
         if(usuario ==null){ //mostrar por pantalla la session del usuario al logearse
             return "redirect:/api/login";
         }
-        if(session.getAttribute("usuario")==null){ //si la session es nula que devuelva al login
-            return "redirect:/api/login";
-        }
+       // if(session.getAttribute("usuario")==null){ //si la session es nula que devuelva al login
+       //     return "redirect:/api/login";
+       // }
         List<Alquileres>listaAlquiler = alquilerService.listaAlquileres(usuario.getId_Usuario());
         List<Compra>listaCompra = compraService.filtroComprada(usuario.getId_Usuario());
 
@@ -72,7 +72,7 @@ public class PersonalController {
         Integer idUsuario = usuario.getId_Usuario();
 
         List<Pelicula> peliculas = peliculaService.getAllPeliculas();
-
+        model.addAttribute("usuario", usuario);
         model.addAttribute("peliculas", peliculas);
 
         return "listaPersonal";

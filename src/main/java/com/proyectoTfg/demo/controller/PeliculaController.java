@@ -123,7 +123,9 @@ public class PeliculaController {
 
 
     @GetMapping("/datos")
-    public String datos(){
+    public String datos(Model model, HttpSession session){
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        model.addAttribute("usuario", usuario);
         return "datos";
     }
 
@@ -137,7 +139,9 @@ public class PeliculaController {
 
     //Vista adminPeliculas
     @GetMapping("/adminPeliculas")
-    public String adminPeliculas(HttpSession session) {
+    public String adminPeliculas(Model model, HttpSession session) {
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        model.addAttribute("usuario", usuario);
         if(!esAdmin(session)){
             return "redirect:/api/login";
         }
@@ -145,9 +149,11 @@ public class PeliculaController {
     }
 
 
-    //Vista Lista de peliculas admin
+    //Vista Lista de peliculas admin        e
     @GetMapping("/listaPeliculas")
-    public String listaPeliculas(Model model, HttpSession session) {
+    public String eslistaPeliculas(Model model, HttpSession session) {
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        model.addAttribute("usuario", usuario);
 
         if(!esAdmin(session)){
             return "redirect:/api/login";
@@ -174,6 +180,8 @@ public class PeliculaController {
             mapaUsuariosPeliculas.put(up.getPelicula().getId_Pelicula(), up);
             model.addAttribute("mapaUsuariosPeliculas", mapaUsuariosPeliculas);// Relacionamos la película con su calificación y estado favorito
         }
+
+        model.addAttribute("usuario", usuario);
         model.addAttribute("usuariosPeliculas", usuariosPeliculas);
         model.addAttribute("peliculas", peliculas);
         return "listaPersonal";
@@ -498,7 +506,9 @@ public class PeliculaController {
     //Estadisticas
 
     @GetMapping("/estadisticas")
-    public String estadisticas(){
+    public String estadisticas(Model model, HttpSession session){
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        model.addAttribute("usuario", usuario);
         return "estadisticas";
 
     }

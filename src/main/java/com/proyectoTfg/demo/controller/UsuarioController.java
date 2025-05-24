@@ -44,7 +44,9 @@ public class UsuarioController {
 
 
     @GetMapping("/adminUsers")
-    public String adminUsers(HttpSession session){
+    public String adminUsers(Model model, HttpSession session){
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        model.addAttribute("usuario", usuario);
 
         if(!esAdmin(session)){
             return "redirect:/api/login";
@@ -116,7 +118,8 @@ public class UsuarioController {
     //listar
     @GetMapping("listaUsuarios")
     public String listaUsuarios(Model model ,HttpSession session) {
-
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        model.addAttribute("usuario", usuario);
         if(!esAdmin(session)){
             return "redirect:/api/login";
         }
