@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -50,7 +49,7 @@ public class PeliculaController {
     @Autowired
     EstadosPeliculasRepository estadosPeliculasRepository;
 
-
+//compras realizadas
     @CrossOrigin(origins = "*")
     @GetMapping("/grafico")
     @ResponseBody
@@ -58,6 +57,7 @@ public class PeliculaController {
         Map<String, Long> datos = new HashMap<>();
         datos.put("Hombres", usuariosPeliculasService.totalComprasHombres());
         datos.put("Mujeres", usuariosPeliculasService.totalComprasMujeres());
+        datos.put("total", usuariosPeliculasService.totalComprasHombres()+usuariosPeliculasService.totalComprasMujeres());
         return datos;
     }
 
@@ -78,6 +78,7 @@ public class PeliculaController {
         Map<String, Long> datos2 = new HashMap<>();
         datos2.put("Hombres", usuariosPeliculasService.totalAlquiladaHombres());
         datos2.put("Mujer", usuariosPeliculasService.totalAlquiladaMujeres());
+        datos2.put("total",usuariosPeliculasService.totalAlquiladaHombres()+usuariosPeliculasService.totalAlquiladaMujeres());
 
         return datos2;
     }

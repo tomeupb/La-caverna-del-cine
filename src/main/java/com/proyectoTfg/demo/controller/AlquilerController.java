@@ -5,7 +5,6 @@ import com.proyectoTfg.demo.model.Pelicula;
 import com.proyectoTfg.demo.model.Usuario;
 import com.proyectoTfg.demo.repository.PeliculaRepository;
 import com.proyectoTfg.demo.service.AlquilerService;
-import com.proyectoTfg.demo.service.PeliculaService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
