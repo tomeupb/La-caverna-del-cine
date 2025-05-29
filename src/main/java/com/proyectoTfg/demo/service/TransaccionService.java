@@ -22,7 +22,6 @@ public class TransaccionService {
     @Autowired
     UsuarioRepository usuarioRepository;
 
-
     @Autowired
     TransaccionRepository transaccionRepository;
 
