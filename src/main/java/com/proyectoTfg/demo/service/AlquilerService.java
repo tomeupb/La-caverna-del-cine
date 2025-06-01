@@ -8,6 +8,7 @@ import com.proyectoTfg.demo.repository.AlquileresRepository;
 import com.proyectoTfg.demo.repository.EstadosPeliculasRepository;
 import com.proyectoTfg.demo.repository.PeliculaRepository;
 import com.proyectoTfg.demo.repository.UsuarioRepository;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ public class AlquilerService {
 
 
 
-    public void alquilada(Integer idUsuario, Integer idPelicula, String estadoAlquiler, RedirectAttributes redirectAttributes) {
+    public void alquilada(Integer idUsuario, Integer idPelicula, String estadoAlquiler, RedirectAttributes redirectAttributes , HttpSession session ) {
 
         Usuario usuario = usuarioRepository.findById(idUsuario).orElse(null);
         Pelicula pelicula = peliculaRepository.findById(idPelicula).orElse(null);
@@ -63,7 +64,7 @@ public class AlquilerService {
             redirectAttributes.addFlashAttribute("error", "No tenemos stock actualmente");
             return;
         }
-
+        //session.setAttribute("usuario", usuario); //actualizacion pantalla
         pelicula.setDisponibleAlquiler(pelicula.getDisponibleAlquiler()-1);
         peliculaRepository.save(pelicula);
 
@@ -72,8 +73,11 @@ public class AlquilerService {
 
 
             // Descontar el crédito del usuario
-            double credito = usuario.getCredito() - alquileres.getPrecioAlquiler();
-            usuario.setCredito(credito);
+            usuario.setCredito(usuario.getCredito() - alquileres.getPrecioAlquiler());
+            usuarioRepository.save(usuario);
+
+            // Actualizar la sesión para reflejar el nuevo saldo sin reiniciar
+            session.setAttribute("usuario", usuario);
             usuarioRepository.save(usuario);
 
             // Actualizar el estado del alquiler
@@ -82,9 +86,6 @@ public class AlquilerService {
 
             alquileresRepository.save(alquileres);
 
-            //SIMULACION
-            //deuda(idUsuario,idPelicula);
-            // Enviar correo de confirmación
             emailService.alquilerCorreo(
                     usuario.getEmail(),
                     "Confirmación de alquiler de película",
@@ -106,7 +107,7 @@ public class AlquilerService {
     }
 
 
-    @Scheduled(cron = "0 14 12 * * ?")  // Se lanza a las  12:14min
+    @Scheduled(cron = "0 41 11 * * ?")  // Se lanza a las  12:14min
     public void verificarDeudas() {
         System.out.println("-----> cron a las 12 ejecutando");
         List<Alquileres> alquileres = alquileresRepository.findAll();

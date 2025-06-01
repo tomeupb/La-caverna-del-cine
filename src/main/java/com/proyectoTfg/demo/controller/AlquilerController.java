@@ -45,10 +45,10 @@ public class AlquilerController {
 
         } else if ("alquilada".equals(estadoAlquiler)) {
 
-            alquilerService.alquilada(idUsuario, idPelicula, estadoAlquiler, redirectAttributes);
+            alquilerService.alquilada(idUsuario, idPelicula, estadoAlquiler, redirectAttributes,session);
 
         }
-
+        //session.setAttribute("usuario", usuario); //actualizacion pantalla
         return "redirect:/home/listaPersonal";
 
 
@@ -70,7 +70,7 @@ public class AlquilerController {
             pelicula.setDisponibleAlquiler(pelicula.getDisponibleAlquiler()+1);
             peliculaRepository.save(pelicula);
         } else if ("alquilada".equals(estadoAlquiler)) {
-            alquilerService.alquilada(idUsuario, idPelicula, estadoAlquiler, redirectAttributes);
+            alquilerService.alquilada(idUsuario, idPelicula, estadoAlquiler, redirectAttributes,session);
         }
 
         return "redirect:/alquiler/gestion";
